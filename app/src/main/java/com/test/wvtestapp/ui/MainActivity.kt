@@ -1,8 +1,9 @@
-package com.test.wvtestapp
+package com.test.wvtestapp.ui
 
 import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.test.wvtestapp.R
 
 class MainActivity : AppCompatActivity() {
     @SuppressLint("SetJavaScriptEnabled")
