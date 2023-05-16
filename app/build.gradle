@@ -50,6 +50,9 @@ dependencies {
     //appsFlyer
     implementation 'com.appsflyer:af-android-sdk:6.9.0'
 
+    //onesignal
+    implementation 'com.onesignal:OneSignal:[4.0.0, 4.99.99]'
+
     //tests
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
