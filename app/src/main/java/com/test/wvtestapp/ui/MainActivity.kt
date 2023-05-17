@@ -22,9 +22,9 @@ class MainActivity : AppCompatActivity() {
         flyerInit()
         remoteConfigInit()
 
-        supportFragmentManager.beginTransaction()
-            .add(R.id.fragment_container, CustomWebViewFragment.newInstance())
-            .commit()
+//        supportFragmentManager.beginTransaction()
+//            .add(R.id.fragment_container, CustomWebViewFragment.newInstance())
+//            .commit()
     }
 
     private fun flyerInit() {
