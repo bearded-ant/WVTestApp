@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.findNavController
 import com.appsflyer.AppsFlyerLib
 import com.appsflyer.attribution.AppsFlyerRequestListener
 import com.google.firebase.ktx.Firebase
@@ -14,6 +15,8 @@ import com.google.firebase.remoteconfig.ktx.remoteConfigSettings
 import com.test.wvtestapp.R
 
 class MainActivity : AppCompatActivity() {
+    private val navController by lazy { findNavController(R.id.main_fragmentContainerView) }
+
     @SuppressLint("SetJavaScriptEnabled")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,10 +24,6 @@ class MainActivity : AppCompatActivity() {
 
         flyerInit()
         remoteConfigInit()
-
-//        supportFragmentManager.beginTransaction()
-//            .add(R.id.fragment_container, CustomWebViewFragment.newInstance())
-//            .commit()
     }
 
     private fun flyerInit() {
@@ -58,12 +57,20 @@ class MainActivity : AppCompatActivity() {
                     val updated = task.result
                     Log.d("TAG", "Config params updated: $updated")
                     Toast.makeText(this, "Fetch and activate succeeded", Toast.LENGTH_SHORT).show()
+                    if (remoteConfig.getBoolean("flag"))
+                        gotoWeb()
+//                    else
+//                        gotoGame()
+
                 } else {
                     Toast.makeText(this, "Fetch failed", Toast.LENGTH_SHORT).show()
                 }
 //                displayWelcomeMessage()
                 Toast.makeText(this, "Hello", Toast.LENGTH_SHORT).show()
             }
+    }
 
+    private fun gotoWeb() {
+        navController.navigate(R.id.customWebViewFragment)
     }
 }

@@ -8,4 +8,8 @@
         android:id="@+id/splashFragment"
         android:name="com.test.wvtestapp.ui.SplashFragment"
         android:label="SplashFragment" />
+    <fragment
+        android:id="@+id/customWebViewFragment"
+        android:name="com.test.wvtestapp.ui.CustomWebViewFragment"
+        android:label="CustomWebViewFragment" />
 </navigation>
