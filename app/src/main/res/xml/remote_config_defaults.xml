@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<defaults>
+  <entry>
+    <key>url</key>
+    <value>google.com</value>
+  </entry>
+  <entry>
+    <key>flag</key>
+    <value>false</value>
+  </entry>
+</defaults>

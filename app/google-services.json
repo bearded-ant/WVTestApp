@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "661780429909",
+    "project_id": "slottest-50a58",
+    "storage_bucket": "slottest-50a58.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:661780429909:android:cd9b07cdf51d05d2da68dc",
+        "android_client_info": {
+          "package_name": "com.test.wvtestapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "661780429909-c4uspfr515nvh5i3kqp8tjrvu7u62n0e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0fXYvqRWIvtbKu9rnwreUFHuOpHHZvfk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "661780429909-c4uspfr515nvh5i3kqp8tjrvu7u62n0e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

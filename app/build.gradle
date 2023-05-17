@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -52,6 +53,10 @@ dependencies {
 
     //onesignal
     implementation 'com.onesignal:OneSignal:[4.0.0, 4.99.99]'
+
+    //firebase
+    implementation 'com.google.firebase:firebase-common-ktx:20.3.2'
+    implementation 'com.google.firebase:firebase-config-ktx:21.4.0'
 
     //tests
     testImplementation 'junit:junit:4.13.2'
