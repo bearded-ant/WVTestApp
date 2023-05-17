@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
     private fun remoteConfigInit() {
         val remoteConfig: FirebaseRemoteConfig = Firebase.remoteConfig
         val configSettings = remoteConfigSettings {
-            minimumFetchIntervalInSeconds = 3600
+            minimumFetchIntervalInSeconds = 360
         }
         remoteConfig.setConfigSettingsAsync(configSettings)
         remoteConfig.setDefaultsAsync(R.xml.remote_config_defaults)
@@ -54,20 +54,21 @@ class MainActivity : AppCompatActivity() {
         remoteConfig.fetchAndActivate()
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    val updated = task.result
-                    Log.d("TAG", "Config params updated: $updated")
-                    Toast.makeText(this, "Fetch and activate succeeded", Toast.LENGTH_SHORT).show()
                     if (remoteConfig.getBoolean("flag"))
                         gotoWeb()
-//                    else
-//                        gotoGame()
+                    else
+                        gotoGame()
 
                 } else {
                     Toast.makeText(this, "Fetch failed", Toast.LENGTH_SHORT).show()
                 }
 //                displayWelcomeMessage()
-                Toast.makeText(this, "Hello", Toast.LENGTH_SHORT).show()
+                gotoGame()
             }
+    }
+
+    private fun gotoGame() {
+        navController.navigate(R.id.gameMainFragment)
     }
 
     private fun gotoWeb() {
