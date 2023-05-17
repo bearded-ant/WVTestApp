@@ -16,4 +16,8 @@
         android:id="@+id/gameMainFragment"
         android:name="com.test.wvtestapp.game.GameMainFragment"
         android:label="GameMainFragment" />
+    <fragment
+        android:id="@+id/gardenFragment"
+        android:name="com.test.wvtestapp.game.GardenFragment"
+        android:label="GardenFragment" />
 </navigation>

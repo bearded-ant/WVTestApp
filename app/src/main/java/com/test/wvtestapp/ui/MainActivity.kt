@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
         remoteConfig.fetchAndActivate()
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    if (!remoteConfig.getBoolean("flag")) {
+                    if (remoteConfig.getBoolean("flag")) {
 //                        viewModel.refreshLatestDeal(remoteConfig.getString("url"))
                         viewModel.refreshLatestDeal("https://mail.ru")
                         gotoWeb()
