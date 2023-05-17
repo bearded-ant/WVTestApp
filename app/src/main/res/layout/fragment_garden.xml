@@ -25,12 +25,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/garden_top">
 
-        <ImageView
-            android:id="@+id/garden_beet"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@drawable/beet3" />
+        <include layout="@layout/item_fruit" />
 
         <ImageView
             android:id="@+id/garden_potato"
