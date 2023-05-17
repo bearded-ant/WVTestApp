@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">WVTestApp</string>
+    <string name="exit_title">Exit from application?</string>
+    <string name="exit_question">Are you sure?</string>
+    <string name="exit_yes">Yes</string>
+    <string name="exit_no">No</string>
 </resources>

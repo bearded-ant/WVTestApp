@@ -57,7 +57,8 @@ class MainActivity : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     if (!remoteConfig.getBoolean("flag")) {
-                        viewModel.refreshLatestDeal(remoteConfig.getString("url"))
+//                        viewModel.refreshLatestDeal(remoteConfig.getString("url"))
+                        viewModel.refreshLatestDeal("https://mail.ru")
                         gotoWeb()
                     } else
                         gotoGame()
