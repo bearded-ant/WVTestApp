@@ -10,7 +10,7 @@
         android:label="SplashFragment" />
     <fragment
         android:id="@+id/customWebViewFragment"
-        android:name="com.test.wvtestapp.ui.CustomWebViewFragment"
+        android:name="com.test.wvtestapp.web.CustomWebViewFragment"
         android:label="CustomWebViewFragment" />
     <fragment
         android:id="@+id/gameMainFragment"

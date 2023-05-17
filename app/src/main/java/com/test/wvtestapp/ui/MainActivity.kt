@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.appsflyer.AppsFlyerLib
 import com.appsflyer.attribution.AppsFlyerRequestListener
@@ -16,6 +17,7 @@ import com.test.wvtestapp.R
 
 class MainActivity : AppCompatActivity() {
     private val navController by lazy { findNavController(R.id.main_fragmentContainerView) }
+    private val viewModel by lazy { ViewModelProvider(this)[MainViewModel::class.java] }
 
     @SuppressLint("SetJavaScriptEnabled")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,16 +56,17 @@ class MainActivity : AppCompatActivity() {
         remoteConfig.fetchAndActivate()
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    if (remoteConfig.getBoolean("flag"))
+                    if (!remoteConfig.getBoolean("flag")) {
+                        viewModel.refreshLatestDeal(remoteConfig.getString("url"))
                         gotoWeb()
-                    else
+                    } else
                         gotoGame()
 
                 } else {
                     Toast.makeText(this, "Fetch failed", Toast.LENGTH_SHORT).show()
                 }
 //                displayWelcomeMessage()
-                gotoGame()
+//                gotoGame()
             }
     }
 
