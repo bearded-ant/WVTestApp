@@ -20,4 +20,8 @@
         android:id="@+id/gardenFragment"
         android:name="com.test.wvtestapp.game.GardenFragment"
         android:label="GardenFragment" />
+    <fragment
+        android:id="@+id/seedsFragment"
+        android:name="com.test.wvtestapp.game.SeedsFragment"
+        android:label="SeedsFragment" />
 </navigation>
