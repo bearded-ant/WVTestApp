@@ -3,7 +3,32 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#c67420">
+    android:background="@color/garden_ground">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/buttons_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_blue"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/garden_top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:text="@string/buy_seeds" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:text="@string/sell_fruit" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
     <ImageView
         android:id="@+id/garden_top"
@@ -14,7 +39,7 @@
         android:src="@drawable/garden_top"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/buttons_top" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="wrap_content"
@@ -25,21 +50,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/garden_top">
 
-        <include layout="@layout/item_fruit" />
+        <include
+            android:id="@+id/fruit1"
+            layout="@layout/item_fruit" />
 
-        <ImageView
-            android:id="@+id/garden_potato"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@drawable/potato3" />
+        <include
+            android:id="@+id/fruit2"
+            layout="@layout/item_fruit" />
 
-        <ImageView
-            android:id="@+id/garden_wheat"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@drawable/wheat3" />
+        <include
+            android:id="@+id/fruit3"
+            layout="@layout/item_fruit" />
+
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <ImageView

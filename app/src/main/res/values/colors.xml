@@ -2,4 +2,6 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="light_blue">#C1E8FF</color>
+    <color name="garden_ground">#c67420</color>
 </resources>
