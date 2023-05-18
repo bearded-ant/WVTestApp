@@ -7,7 +7,14 @@
     <fragment
         android:id="@+id/splashFragment"
         android:name="com.test.wvtestapp.ui.SplashFragment"
-        android:label="SplashFragment" />
+        android:label="SplashFragment" >
+        <action
+            android:id="@+id/action_splashFragment_to_customWebViewFragment"
+            app:destination="@id/customWebViewFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_gameMainFragment"
+            app:destination="@id/gameMainFragment" />
+    </fragment>
     <fragment
         android:id="@+id/customWebViewFragment"
         android:name="com.test.wvtestapp.web.CustomWebViewFragment"
@@ -15,13 +22,36 @@
     <fragment
         android:id="@+id/gameMainFragment"
         android:name="com.test.wvtestapp.game.GameMainFragment"
-        android:label="GameMainFragment" />
+        android:label="GameMainFragment" >
+        <action
+            android:id="@+id/action_gameMainFragment_to_gardenFragment"
+            app:destination="@id/gardenFragment" />
+    </fragment>
     <fragment
         android:id="@+id/gardenFragment"
         android:name="com.test.wvtestapp.game.GardenFragment"
-        android:label="GardenFragment" />
+        android:label="GardenFragment" >
+        <action
+            android:id="@+id/action_gardenFragment_to_seedsFragment"
+            app:destination="@id/seedsFragment" />
+        <action
+            android:id="@+id/action_gardenFragment_to_fruitFragment"
+            app:destination="@id/fruitFragment" />
+    </fragment>
     <fragment
         android:id="@+id/seedsFragment"
         android:name="com.test.wvtestapp.game.SeedsFragment"
-        android:label="SeedsFragment" />
+        android:label="SeedsFragment" >
+        <action
+            android:id="@+id/action_seedsFragment_to_gardenFragment"
+            app:destination="@id/gardenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fruitFragment"
+        android:name="com.test.wvtestapp.game.FruitFragment"
+        android:label="FruitFragment" >
+        <action
+            android:id="@+id/action_fruitFragment_to_gardenFragment"
+            app:destination="@id/gardenFragment" />
+    </fragment>
 </navigation>

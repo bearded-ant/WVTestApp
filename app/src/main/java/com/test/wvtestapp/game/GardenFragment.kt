@@ -7,9 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.test.wvtestapp.R
-import com.test.wvtestapp.databinding.FragmentGameMainBinding
 import com.test.wvtestapp.databinding.FragmentGardenBinding
-import com.test.wvtestapp.databinding.FragmentSplashBinding
 
 class GardenFragment : Fragment() {
     companion object {
@@ -28,6 +26,9 @@ class GardenFragment : Fragment() {
         _binding = FragmentGardenBinding.inflate(layoutInflater)
 
         binding.btnBuySeeds.setOnClickListener {
+            findNavController().navigate(R.id.seedsFragment)
+        }
+        binding.btnSellFruit.setOnClickListener {
             findNavController().navigate(R.id.seedsFragment)
         }
 
