@@ -6,12 +6,12 @@
     android:layout_marginHorizontal="8dp"
     android:clickable="true"
     android:focusable="true"
-    app:cardBackgroundColor="#805020">
+    app:cardBackgroundColor="@color/item_ground">
 
     <ImageView
         android:id="@+id/item_small_image"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="@dimen/item_bed_size"
+        android:layout_height="@dimen/item_bed_size"
         android:src="@drawable/beet1" />
 
 </com.google.android.material.card.MaterialCardView>

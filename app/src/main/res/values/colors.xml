@@ -4,4 +4,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="light_blue">#C1E8FF</color>
     <color name="garden_ground">#c67420</color>
+    <color name="item_ground">#805020</color>
 </resources>
