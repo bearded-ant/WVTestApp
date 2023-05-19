@@ -1,4 +1,4 @@
-package com.test.wvtestapp.web
+package com.test.wvtestapp.ui.web
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -15,7 +15,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.test.wvtestapp.R
 import com.test.wvtestapp.databinding.FragmentWebviewBinding
-import com.test.wvtestapp.ui.MainViewModel
+import com.test.wvtestapp.ui.main.MainViewModel
 
 class CustomWebViewFragment : Fragment() {
     companion object {

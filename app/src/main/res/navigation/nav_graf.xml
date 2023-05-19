@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.test.wvtestapp.ui.SplashFragment"
+        android:name="com.test.wvtestapp.ui.main.SplashFragment"
         android:label="SplashFragment" >
         <action
             android:id="@+id/action_splashFragment_to_customWebViewFragment"
@@ -17,11 +17,11 @@
     </fragment>
     <fragment
         android:id="@+id/customWebViewFragment"
-        android:name="com.test.wvtestapp.web.CustomWebViewFragment"
+        android:name="com.test.wvtestapp.ui.web.CustomWebViewFragment"
         android:label="CustomWebViewFragment" />
     <fragment
         android:id="@+id/gameMainFragment"
-        android:name="com.test.wvtestapp.game.GameMainFragment"
+        android:name="com.test.wvtestapp.ui.game.GameMainFragment"
         android:label="GameMainFragment" >
         <action
             android:id="@+id/action_gameMainFragment_to_gardenFragment"
@@ -29,7 +29,7 @@
     </fragment>
     <fragment
         android:id="@+id/gardenFragment"
-        android:name="com.test.wvtestapp.game.GardenFragment"
+        android:name="com.test.wvtestapp.ui.game.GardenFragment"
         android:label="GardenFragment" >
         <action
             android:id="@+id/action_gardenFragment_to_seedsFragment"
@@ -40,7 +40,7 @@
     </fragment>
     <fragment
         android:id="@+id/seedsFragment"
-        android:name="com.test.wvtestapp.game.SeedsFragment"
+        android:name="com.test.wvtestapp.ui.game.SeedsFragment"
         android:label="SeedsFragment" >
         <action
             android:id="@+id/action_seedsFragment_to_gardenFragment"
@@ -48,7 +48,7 @@
     </fragment>
     <fragment
         android:id="@+id/fruitFragment"
-        android:name="com.test.wvtestapp.game.FruitFragment"
+        android:name="com.test.wvtestapp.ui.game.FruitFragment"
         android:label="FruitFragment" >
         <action
             android:id="@+id/action_fruitFragment_to_gardenFragment"

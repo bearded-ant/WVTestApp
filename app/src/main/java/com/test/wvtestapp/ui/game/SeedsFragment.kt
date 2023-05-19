@@ -1,18 +1,21 @@
-package com.test.wvtestapp.game
+package com.test.wvtestapp.ui.game
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.test.wvtestapp.databinding.FragmentFruitBinding
+import com.test.wvtestapp.databinding.FragmentGameMainBinding
+import com.test.wvtestapp.databinding.FragmentGardenBinding
+import com.test.wvtestapp.databinding.FragmentSeedsBinding
+import com.test.wvtestapp.databinding.FragmentSplashBinding
 
-class FruitFragment : Fragment() {
+class SeedsFragment : Fragment() {
     companion object {
-        fun newInstance(): FruitFragment = FruitFragment()
+        fun newInstance(): SeedsFragment = SeedsFragment()
     }
 
-    private var _binding: FragmentFruitBinding? = null
+    private var _binding: FragmentSeedsBinding? = null
     private val binding
         get() = _binding!!
 
@@ -21,7 +24,7 @@ class FruitFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentFruitBinding.inflate(layoutInflater)
+        _binding = FragmentSeedsBinding.inflate(layoutInflater)
         return binding.root
     }
 

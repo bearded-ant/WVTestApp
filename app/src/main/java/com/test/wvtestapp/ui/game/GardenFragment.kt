@@ -1,4 +1,4 @@
-package com.test.wvtestapp.game
+package com.test.wvtestapp.ui.game
 
 import android.os.Bundle
 import android.view.LayoutInflater

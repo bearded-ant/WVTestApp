@@ -1,4 +1,4 @@
-package com.test.wvtestapp.ui
+package com.test.wvtestapp.ui.main
 
 import android.annotation.SuppressLint
 import android.os.Bundle

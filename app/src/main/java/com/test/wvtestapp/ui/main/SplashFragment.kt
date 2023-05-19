@@ -1,21 +1,18 @@
-package com.test.wvtestapp.game
+package com.test.wvtestapp.ui.main
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
-import com.test.wvtestapp.R
-import com.test.wvtestapp.databinding.FragmentGameMainBinding
 import com.test.wvtestapp.databinding.FragmentSplashBinding
 
-class GameMainFragment : Fragment() {
+class SplashFragment : Fragment() {
     companion object {
-        fun newInstance(): GameMainFragment = GameMainFragment()
+        fun newInstance(): SplashFragment = SplashFragment()
     }
 
-    private var _binding: FragmentGameMainBinding? = null
+    private var _binding: FragmentSplashBinding? = null
     private val binding
         get() = _binding!!
 
@@ -24,11 +21,7 @@ class GameMainFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentGameMainBinding.inflate(layoutInflater)
-
-        binding.btnStartGame.setOnClickListener {
-            findNavController().navigate(R.id.gardenFragment)
-        }
+        _binding = FragmentSplashBinding.inflate(layoutInflater)
         return binding.root
     }
 

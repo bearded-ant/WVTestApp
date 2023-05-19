@@ -1,4 +1,4 @@
-package com.test.wvtestapp.ui
+package com.test.wvtestapp.ui.main
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
