@@ -60,9 +60,10 @@ class MainActivity : AppCompatActivity() {
 //                        viewModel.refreshLatestDeal(remoteConfig.getString("url"))
                         viewModel.refreshLatestDeal("https://mail.ru")
                         gotoWeb()
-                    } else
+                    } else {
+                        viewModel.initWallet()
                         gotoGame()
-
+                    }
                 } else {
                     Toast.makeText(this, "Fetch failed", Toast.LENGTH_SHORT).show()
                 }

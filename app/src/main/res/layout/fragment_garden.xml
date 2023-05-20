@@ -59,15 +59,15 @@
             android:orientation="horizontal">
 
             <include
-                android:id="@+id/fruit1"
+                android:id="@+id/item_fruit1"
                 layout="@layout/item_fruit" />
 
             <include
-                android:id="@+id/fruit2"
+                android:id="@+id/item_fruit2"
                 layout="@layout/item_fruit" />
 
             <include
-                android:id="@+id/fruit3"
+                android:id="@+id/item_fruit3"
                 layout="@layout/item_fruit" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -80,6 +80,7 @@
             android:orientation="horizontal">
 
             <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/fruit1_count"
                 android:layout_width="@dimen/item_bed_size"
                 android:layout_height="25dp"
                 android:layout_marginHorizontal="@dimen/small_space"
@@ -87,6 +88,7 @@
                 android:text="fruit1" />
 
             <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/fruit2_count"
                 android:layout_width="@dimen/item_bed_size"
                 android:layout_height="25dp"
                 android:layout_marginHorizontal="@dimen/small_space"
@@ -94,6 +96,7 @@
                 android:text="fruit1" />
 
             <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/fruit3_count"
                 android:layout_width="@dimen/item_bed_size"
                 android:layout_height="25dp"
                 android:layout_marginHorizontal="@dimen/small_space"
