@@ -39,12 +39,12 @@ class MainViewModel : ViewModel() {
         }
     }
 
-    private val _timer = MutableLiveData<Int>()
-    val timer: LiveData<Int> = _timer
+    private val _growing = MutableLiveData<List<Int>>()
+    val growing: LiveData<List<Int>> = _growing
 
-    fun refreshTimer(timerResult: Int) {
+    fun refreshGrowingState(growingState: List<Int>) {
         viewModelScope.launch {
-            _timer.postValue(timerResult)
+            _growing.postValue(growingState)
         }
     }
 }

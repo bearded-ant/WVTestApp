@@ -10,8 +10,7 @@ import androidx.navigation.fragment.findNavController
 import com.test.wvtestapp.R
 import com.test.wvtestapp.databinding.FragmentGardenBinding
 import com.test.wvtestapp.ui.main.MainViewModel
-import java.util.Timer
-import java.util.TimerTask
+import java.util.*
 
 class GardenFragment : Fragment() {
     companion object {
@@ -48,15 +47,27 @@ class GardenFragment : Fragment() {
 
         timer.scheduleAtFixedRate(object : TimerTask() {
             override fun run() {
-                val gardenBedFruit1State = (0..1).random()
-                viewModel.refreshTimer(gardenBedFruit1State)
-//                binding.fruit1Count.text = gardenBedFruit1State.toString()
+                val gardenGrowing =
+                    listOf((0..1).random(), (0..1).random(), (0..1).random())
+
+                val melon = binding.itemFruit1.itemImage
+                val watermelon = binding.itemFruit2.itemImage
+                val pineapple = binding.itemFruit3.itemImage
+
+                viewModel.fruits.observe(viewLifecycleOwner) {
+                    for (i in 0..gardenGrowing.lastIndex) {
+                        if (gardenGrowing[i] == 1 && (it[i].growing in 1..2))
+                            fruitGrowingUpdate(i)
+                    }
+                }
+                viewModel.refreshGrowingState(gardenGrowing)
             }
 
         }, 10, 5000)
 
-//        viewModel.refreshTimer(gardenBedFruit1State)
-        viewModel.timer.observe(viewLifecycleOwner) {
+
+
+        viewModel.growing.observe(viewLifecycleOwner) {
             binding.fruit1Count.text = it.toString()
         }
 
@@ -74,6 +85,12 @@ class GardenFragment : Fragment() {
         _binding = null
         timer.cancel()
         timer.purge()
+    }
+
+    fun fruitGrowingUpdate(fruitNumber:Int) {
+        when (fruitNumber) {
+            1->""
+        }
     }
 
 }
