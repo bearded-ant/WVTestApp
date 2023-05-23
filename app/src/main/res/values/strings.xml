@@ -7,4 +7,6 @@
     <string name="buy_seeds">buy seeds</string>
     <string name="sell_fruit">sell fruit</string>
     <string name="sell_btn">sell</string>
+    <string name="the_harvest_gathered">The harvest has been gathered.</string>
+    <string name="seed_planted">Seed planted.</string>
 </resources>

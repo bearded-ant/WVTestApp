@@ -13,10 +13,26 @@ class MainViewModel : ViewModel() {
 
     private val repo: Repo = Repo()
 
+    private val _fruits = MutableLiveData<List<Fruit>>()
+    val fruits: LiveData<List<Fruit>> = _fruits
+
+    fun initFruit() {
+        viewModelScope.launch {
+            _fruits.postValue(repo.fruits)
+        }
+    }
+
+    fun initWallet() {
+        viewModelScope.launch {
+            _userWallet.postValue(repo.userWallet)
+        }
+    }
+
+
     private val _remoteConfigUrl = MutableLiveData<String>()
     val remoteConfigUrl: LiveData<String> = _remoteConfigUrl
 
-    fun refreshLatestDeal(url: String) {
+    fun refreshConfigUrl(url: String) {
         viewModelScope.launch {
             _remoteConfigUrl.postValue(url)
         }
@@ -24,27 +40,37 @@ class MainViewModel : ViewModel() {
 
     private val _userWallet = MutableLiveData<Wallet>()
     val userWallet: LiveData<Wallet> = _userWallet
-    fun initWallet() {
+    fun refreshWallet(coins: Int) {
         viewModelScope.launch {
-            _userWallet.postValue(repo.userWallet)
+            val currentWallet = userWallet.value
+            currentWallet!!.coins += coins
+            _userWallet.postValue(currentWallet!!)
         }
     }
 
-    private val _fruits = MutableLiveData<List<Fruit>>()
-    val fruits: LiveData<List<Fruit>> = _fruits
 
-    fun refreshFruits(fruits: List<Fruit>) {
+    fun refreshFruitLevel(fieldId: Int, fruitLevel: Int) {
         viewModelScope.launch {
-            _fruits.postValue(fruits)
+            val currentList = fruits.value ?: emptyList()
+            currentList[fieldId].fruitLevel = fruitLevel
+            _fruits.value = currentList
         }
     }
 
-    private val _growing = MutableLiveData<List<Int>>()
-    val growing: LiveData<List<Int>> = _growing
-
-    fun refreshGrowingState(growingState: List<Int>) {
+    fun refreshFruitCount(fieldId: Int, fruitCount: Int) {
         viewModelScope.launch {
-            _growing.postValue(growingState)
+            val currentList = fruits.value ?: emptyList()
+            currentList[fieldId].count += fruitCount
+            _fruits.value = currentList
         }
     }
+
+    fun refreshSeedCount(fieldId: Int, seedCount: Int) {
+        viewModelScope.launch {
+            val currentList = fruits.value ?: emptyList()
+            currentList[fieldId].seedCount = currentList[fieldId].seedCount + seedCount
+            _fruits.value = currentList
+        }
+    }
+
 }

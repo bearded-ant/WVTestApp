@@ -58,10 +58,9 @@ class MainActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     if (remoteConfig.getBoolean("flag")) {
 //                        viewModel.refreshLatestDeal(remoteConfig.getString("url"))
-                        viewModel.refreshLatestDeal("https://mail.ru")
+                        viewModel.refreshConfigUrl("https://mail.ru")
                         gotoWeb()
                     } else {
-                        viewModel.initWallet()
                         gotoGame()
                     }
                 } else {

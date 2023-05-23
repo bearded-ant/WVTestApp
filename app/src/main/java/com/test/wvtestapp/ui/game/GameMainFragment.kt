@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.test.wvtestapp.R
 import com.test.wvtestapp.databinding.FragmentGameMainBinding
-import com.test.wvtestapp.databinding.FragmentSplashBinding
 
 class GameMainFragment : Fragment() {
     companion object {
