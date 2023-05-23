@@ -1,6 +1,7 @@
 package com.test.wvtestapp.ui.game
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
 import com.test.wvtestapp.R
 import com.test.wvtestapp.base.App
+import com.test.wvtestapp.base.infoMap
 import com.test.wvtestapp.databinding.FragmentGameMainBinding
 import com.test.wvtestapp.ui.main.MainViewModel
 
@@ -50,9 +52,11 @@ class GameMainFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
     private fun showSnackbar() {
         val rootView: View = binding.root
-        val snackbar = Snackbar.make(rootView, "AppsFlayer Info", Snackbar.LENGTH_SHORT)
+        val snackbar = Snackbar.make(rootView, "AppsFlayer Info $infoMap", Snackbar.LENGTH_SHORT)
+        Log.d("FlyerLog", "Launch sent successfully: $infoMap")
         snackbar.setAction("Close") {
             snackbar.dismiss()
         }

@@ -9,35 +9,36 @@ import com.onesignal.OneSignal
 
 const val AF_DEV_KEY: String = "T3VrWscGpfMfy68HLCjAX6"
 const val ONESIGNAL_APP_ID: String = "82138481-c06a-4125-be89-e3a04f184800"
+lateinit var infoMap: Map<String, Any>
 
 class App : Application() {
     override fun onCreate() {
         super.onCreate()
 
-//        AppsFlyerLib.getInstance().init(AF_DEV_KEY, null, this)
-//
-//        val metricks: AppsFlyerConversionListener = object : AppsFlyerConversionListener {
-//            override fun onConversionDataSuccess(p0: MutableMap<String, Any>?) {
-//                TODO("Not yet implemented")
-//            }
-//
-//            override fun onConversionDataFail(p0: String?) {
-//                TODO("Not yet implemented")
-//            }
-//
-//            override fun onAppOpenAttribution(p0: MutableMap<String, String>?) {
-//                TODO("Not yet implemented")
-//            }
-//
-//            override fun onAttributionFailure(p0: String?) {
-//                TODO("Not yet implemented")
-//            }
-//        }
-//
-//        AppsFlyerLib.getInstance().setDebugLog(true)
-//        AppsFlyerLib.getInstance().init(AF_DEV_KEY, metricks, this)
-//        AppsFlyerLib.getInstance().registerConversionListener(this, metricks)
-//        AppsFlyerLib.getInstance().start(this)
+        AppsFlyerLib.getInstance().init(AF_DEV_KEY, null, this)
+
+        val metricks: AppsFlyerConversionListener = object : AppsFlyerConversionListener {
+            override fun onConversionDataSuccess(p0: Map<String, Any>?) {
+                infoMap = p0!!
+            }
+
+            override fun onConversionDataFail(p0: String?) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onAppOpenAttribution(p0: MutableMap<String, String>?) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onAttributionFailure(p0: String?) {
+                TODO("Not yet implemented")
+            }
+        }
+
+        AppsFlyerLib.getInstance().setDebugLog(true)
+        AppsFlyerLib.getInstance().init(AF_DEV_KEY, metricks, this)
+        AppsFlyerLib.getInstance().registerConversionListener(this, metricks)
+        AppsFlyerLib.getInstance().start(this)
 
         // Logging set to help debug issues, remove before releasing your app.
         OneSignal.setLogLevel(OneSignal.LOG_LEVEL.VERBOSE, OneSignal.LOG_LEVEL.NONE)

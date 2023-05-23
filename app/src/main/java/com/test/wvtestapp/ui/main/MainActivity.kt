@@ -11,7 +11,6 @@ import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import com.google.firebase.remoteconfig.ktx.remoteConfig
 import com.google.firebase.remoteconfig.ktx.remoteConfigSettings
 import com.test.wvtestapp.R
-import com.test.wvtestapp.base.App
 
 
 class MainActivity : AppCompatActivity() {
@@ -39,8 +38,7 @@ class MainActivity : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     if (remoteConfig.getBoolean("flag")) {
-//                        viewModel.refreshLatestDeal(remoteConfig.getString("url"))
-                        viewModel.refreshConfigUrl("https://mail.ru")
+                        viewModel.refreshConfigUrl(remoteConfig.getString("url"))
                         gotoWeb()
                     } else {
                         gotoGame()
