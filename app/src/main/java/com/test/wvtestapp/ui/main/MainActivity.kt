@@ -66,8 +66,6 @@ class MainActivity : AppCompatActivity() {
                 } else {
                     Toast.makeText(this, "Fetch failed", Toast.LENGTH_SHORT).show()
                 }
-//                displayWelcomeMessage()
-//                gotoGame()
             }
     }
 

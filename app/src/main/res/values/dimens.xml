@@ -4,4 +4,5 @@
     <dimen name="item_bed_size">100dp</dimen>
     <dimen name="small_space">8dp</dimen>
     <dimen name="medium_space">16dp</dimen>
+    <dimen name="big_margin">36dp</dimen>
 </resources>

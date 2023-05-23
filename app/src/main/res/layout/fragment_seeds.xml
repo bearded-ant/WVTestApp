@@ -5,9 +5,20 @@
     android:layout_height="match_parent"
     android:background="@color/garden_ground">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/market"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/big_margin"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -18,16 +29,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
+            android:background="@color/light_blue"
             android:gravity="center"
             android:orientation="horizontal">
 
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="in your wallet: "
+                android:text="@string/coins_in_wallet"
                 android:textSize="25sp" />
 
             <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/coins"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
@@ -52,15 +65,18 @@
 
             <ImageView
                 android:layout_width="@dimen/fruit_small"
-                android:layout_height="@dimen/fruit_small" />
+                android:layout_height="@dimen/fruit_small"
+                android:src="@drawable/pineapple1" />
 
             <Button
+                android:id="@+id/btn_buy_pineapple_seed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="8dp"
                 android:text="@string/buy_seeds" />
 
             <TextView
+                android:id="@+id/pineapple_seeds_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="100" />
@@ -77,15 +93,18 @@
 
             <ImageView
                 android:layout_width="@dimen/fruit_small"
-                android:layout_height="@dimen/fruit_small" />
+                android:layout_height="@dimen/fruit_small"
+                android:src="@drawable/melon1" />
 
             <Button
+                android:id="@+id/btn_buy_melon_seed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="8dp"
                 android:text="@string/buy_seeds" />
 
             <TextView
+                android:id="@+id/melon_seed_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="100" />
@@ -102,19 +121,30 @@
 
             <ImageView
                 android:layout_width="@dimen/fruit_small"
-                android:layout_height="@dimen/fruit_small" />
+                android:layout_height="@dimen/fruit_small"
+                android:src="@drawable/watermelon1" />
 
             <Button
+                android:id="@+id/btn_buy_watermelon_seed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="8dp"
                 android:text="@string/buy_seeds" />
 
             <TextView
+                android:id="@+id/watermelon_seeds_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="100" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/big_margin"
+            android:text="@string/back_btn" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.constraintlayout.widget.ConstraintLayout>

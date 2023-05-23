@@ -9,4 +9,6 @@
     <string name="sell_btn">sell</string>
     <string name="the_harvest_gathered">The harvest has been gathered.</string>
     <string name="seed_planted">Seed planted.</string>
+    <string name="back_btn">back to the garden</string>
+    <string name="coins_in_wallet">in your wallet:</string>
 </resources>

@@ -22,6 +22,17 @@ class MainViewModel : ViewModel() {
         }
     }
 
+    private val _userWallet = MutableLiveData<Wallet>()
+    val userWallet: LiveData<Wallet> = _userWallet
+
+    fun refreshWallet(coins: Int) {
+        viewModelScope.launch {
+            val currentWallet = userWallet.value
+            currentWallet!!.coins += coins
+            _userWallet.postValue(currentWallet!!)
+        }
+    }
+
     fun initWallet() {
         viewModelScope.launch {
             _userWallet.postValue(repo.userWallet)
@@ -37,18 +48,6 @@ class MainViewModel : ViewModel() {
             _remoteConfigUrl.postValue(url)
         }
     }
-
-    private val _userWallet = MutableLiveData<Wallet>()
-    val userWallet: LiveData<Wallet> = _userWallet
-
-    fun refreshWallet(coins: Int) {
-        viewModelScope.launch {
-            val currentWallet = userWallet.value
-            currentWallet!!.coins += coins
-            _userWallet.postValue(currentWallet!!)
-        }
-    }
-
 
     fun refreshFruitLevel(fieldId: Int, fruitLevel: Int) {
         viewModelScope.launch {

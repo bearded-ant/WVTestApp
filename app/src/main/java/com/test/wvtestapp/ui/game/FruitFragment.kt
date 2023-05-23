@@ -1,12 +1,13 @@
 package com.test.wvtestapp.ui.game
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import com.test.wvtestapp.R
 import com.test.wvtestapp.databinding.FragmentFruitBinding
 import com.test.wvtestapp.ui.main.MainViewModel
 
@@ -16,7 +17,6 @@ class FruitFragment : Fragment() {
     }
 
     private val viewModel by lazy { ViewModelProvider(requireActivity())[MainViewModel::class.java] }
-//    private val viewModel by lazy { ViewModelProvider(this)[MainViewModel::class.java] }
 
     private var _binding: FragmentFruitBinding? = null
     private val binding
@@ -28,7 +28,9 @@ class FruitFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentFruitBinding.inflate(layoutInflater)
-        viewModel.initWallet()
+
+//        viewModel.initWallet()
+
         return binding.root
     }
 
@@ -58,13 +60,15 @@ class FruitFragment : Fragment() {
             sellClick(2, fruitCount)
         }
 
+        binding.btnBack.setOnClickListener {
+            findNavController().navigate(R.id.gardenFragment)
+        }
     }
 
     private fun sellClick(field: Int, fruitCount: Int) {
         if (fruitCount > 0) {
             viewModel.refreshWallet(fruitCount)
             viewModel.refreshFruitCount(field, -fruitCount)
-            Log.d("click", "sellClick: $fruitCount ")
         }
     }
 

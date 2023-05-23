@@ -12,10 +12,8 @@ import com.test.wvtestapp.R
 import com.test.wvtestapp.databinding.FragmentGardenBinding
 import com.test.wvtestapp.gameUtils.GameUtils
 import com.test.wvtestapp.model.Repo
-import com.test.wvtestapp.ui.main.MainActivity
 import com.test.wvtestapp.ui.main.MainViewModel
-import java.util.Timer
-import java.util.TimerTask
+import java.util.*
 
 class GardenFragment : Fragment() {
     companion object {
@@ -38,7 +36,7 @@ class GardenFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentGardenBinding.inflate(layoutInflater)
-        viewModel.initFruit()
+//        viewModel.initFruit()
         return binding.root
     }
 
@@ -102,10 +100,7 @@ class GardenFragment : Fragment() {
     private fun fieldClick(gameUtils: GameUtils, field: Int) {
         if (gameUtils.canCollect(repo[field].fruitLevel)) {
             repo[field].fruitLevel = 0
-//            gameUtils.harvestingCrop(field)
-            viewModel.refreshFruitCount(field,(1..5).random())
-            viewModel.refreshFruitLevel(field,0)
-
+            gameUtils.harvestingCrop(field)
             Toast.makeText(
                 requireContext(),
                 getString(R.string.the_harvest_gathered),

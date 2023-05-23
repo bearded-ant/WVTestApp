@@ -10,12 +10,13 @@ class GameUtils(private val viewModel: MainViewModel) {
     //посадить семечку
     fun plantSeeds(fieldNumber: Int) {
         viewModel.refreshFruitLevel(fieldNumber, 1)
+        viewModel.refreshSeedCount(fieldNumber, -1)
     }
 
     //собрать урожай
     fun harvestingCrop(fieldNumber: Int) {
-        viewModel.refreshFruitLevel(fieldNumber, 0)
         viewModel.refreshFruitCount(fieldNumber, (1..5).random())
+        viewModel.refreshFruitLevel(fieldNumber, 0)
     }
 
     //проверка грядки
