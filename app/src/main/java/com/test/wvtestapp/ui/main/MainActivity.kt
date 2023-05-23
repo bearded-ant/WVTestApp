@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
+import com.appsflyer.AppsFlyerConversionListener
 import com.appsflyer.AppsFlyerLib
 import com.appsflyer.attribution.AppsFlyerRequestListener
 import com.google.firebase.ktx.Firebase
@@ -26,6 +27,31 @@ class MainActivity : AppCompatActivity() {
 
         flyerInit()
         remoteConfigInit()
+
+//
+//        val metricks: AppsFlyerConversionListener = object : AppsFlyerConversionListener {
+//            override fun onConversionDataSuccess(p0: MutableMap<String, Any>?) {
+//                TODO("Not yet implemented")
+//            }
+//
+//            override fun onConversionDataFail(p0: String?) {
+//                TODO("Not yet implemented")
+//            }
+//
+//            override fun onAppOpenAttribution(p0: MutableMap<String, String>?) {
+//                TODO("Not yet implemented")
+//            }
+//
+//            override fun onAttributionFailure(p0: String?) {
+//                TODO("Not yet implemented")
+//            }
+//        }
+//
+//        AppsFlyerLib.getInstance().setDebugLog(true)
+//        AppsFlyerLib.getInstance().init("flag", metricks, this)
+//        AppsFlyerLib.getInstance().registerConversionListener(this, metricks)
+//        AppsFlyerLib.getInstance().start(this)
+
     }
 
     private fun flyerInit() {

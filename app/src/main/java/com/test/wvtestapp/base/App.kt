@@ -4,8 +4,8 @@ import android.app.Application
 import com.appsflyer.AppsFlyerLib
 import com.onesignal.OneSignal
 
-const val AF_DEV_KEY: String = "0"
-const val ONESIGNAL_APP_ID: String = "1"
+const val AF_DEV_KEY: String = "T3VrWscGpfMfy68HLCjAX6"
+const val ONESIGNAL_APP_ID: String = "82138481-c06a-4125-be89-e3a04f184800"
 
 class App : Application() {
     override fun onCreate() {
