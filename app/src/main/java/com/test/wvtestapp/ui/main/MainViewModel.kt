@@ -40,6 +40,7 @@ class MainViewModel : ViewModel() {
 
     private val _userWallet = MutableLiveData<Wallet>()
     val userWallet: LiveData<Wallet> = _userWallet
+
     fun refreshWallet(coins: Int) {
         viewModelScope.launch {
             val currentWallet = userWallet.value

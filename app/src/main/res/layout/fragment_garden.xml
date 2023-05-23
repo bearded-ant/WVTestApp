@@ -59,15 +59,15 @@
             android:orientation="horizontal">
 
             <include
-                android:id="@+id/item_fruit1"
+                android:id="@+id/item_pineapple"
                 layout="@layout/item_fruit" />
 
             <include
-                android:id="@+id/item_fruit2"
+                android:id="@+id/item_melon"
                 layout="@layout/item_fruit" />
 
             <include
-                android:id="@+id/item_fruit3"
+                android:id="@+id/item_watermelon"
                 layout="@layout/item_fruit" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>

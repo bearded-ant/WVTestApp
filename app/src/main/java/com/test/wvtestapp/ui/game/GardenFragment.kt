@@ -53,13 +53,13 @@ class GardenFragment : Fragment() {
             binding.fruit2Count.text = fruits[1].count.toString()
             binding.fruit3Count.text = fruits[2].count.toString()
 
-            binding.itemFruit1.itemImage.setImageResource(
+            binding.itemPineapple.itemImage.setImageResource(
                 gameUtils.reDrawField(0, fruits[0].fruitLevel)
             )
-            binding.itemFruit2.itemImage.setImageResource(
+            binding.itemMelon.itemImage.setImageResource(
                 gameUtils.reDrawField(1, fruits[1].fruitLevel)
             )
-            binding.itemFruit3.itemImage.setImageResource(
+            binding.itemWatermelon.itemImage.setImageResource(
                 gameUtils.reDrawField(2, fruits[2].fruitLevel)
             )
 
@@ -80,13 +80,13 @@ class GardenFragment : Fragment() {
 
         }, 10, 3000)
 
-        binding.itemFruit1.itemImage.setOnClickListener {
+        binding.itemPineapple.itemImage.setOnClickListener {
             fieldClick(gameUtils, 0)
         }
-        binding.itemFruit2.itemImage.setOnClickListener {
+        binding.itemMelon.itemImage.setOnClickListener {
             fieldClick(gameUtils, 1)
         }
-        binding.itemFruit3.itemImage.setOnClickListener {
+        binding.itemWatermelon.itemImage.setOnClickListener {
             fieldClick(gameUtils, 2)
         }
 

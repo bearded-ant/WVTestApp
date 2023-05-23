@@ -83,17 +83,17 @@
             <ImageView
                 android:layout_width="@dimen/fruit_small"
                 android:layout_height="@dimen/fruit_small"
-                android:src="@drawable/watermelon3"/>
+                android:src="@drawable/melon3"/>
 
             <TextView
-                android:id="@+id/water_melon_count"
+                android:id="@+id/melon_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:text="100" />
 
             <Button
-                android:id="@+id/btn_sell_watermelon"
+                android:id="@+id/btn_sell_melon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="8dp"
@@ -113,17 +113,17 @@
             <ImageView
                 android:layout_width="@dimen/fruit_small"
                 android:layout_height="@dimen/fruit_small"
-                android:src="@drawable/melon3"/>
+                android:src="@drawable/watermelon3"/>
 
             <TextView
-                android:id="@+id/melon_count"
+                android:id="@+id/watermelon_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:text="100" />
 
             <Button
-                android:id="@+id/btn_sell_melon"
+                android:id="@+id/btn_sell_watermelon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="8dp"

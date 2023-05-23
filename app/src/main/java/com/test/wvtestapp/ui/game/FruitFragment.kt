@@ -1,6 +1,7 @@
 package com.test.wvtestapp.ui.game
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -37,31 +38,33 @@ class FruitFragment : Fragment() {
         viewModel.fruits.observe(viewLifecycleOwner) {
             binding.pineappleCount.text = it[0].count.toString()
             binding.melonCount.text = it[1].count.toString()
-            binding.waterMelonCount.text = it[2].count.toString()
+            binding.watermelonCount.text = it[2].count.toString()
         }
-        viewModel.userWallet.observe(this) {
+        viewModel.userWallet.observe(viewLifecycleOwner) {
             binding.walletCost.text = it.coins.toString()
         }
 
-        binding.btnSellMelon.setOnClickListener {
-            val fruitCount = binding.melonCount.text.toString().toInt()
-            sellClick(0, fruitCount)
-        }
         binding.btnSellPineapple.setOnClickListener {
             val fruitCount = binding.pineappleCount.text.toString().toInt()
+            sellClick(0, fruitCount)
+        }
+        binding.btnSellMelon.setOnClickListener {
+            val fruitCount = binding.melonCount.text.toString().toInt()
             sellClick(1, fruitCount)
         }
+
         binding.btnSellWatermelon.setOnClickListener {
-            val fruitCount = binding.waterMelonCount.text.toString().toInt()
+            val fruitCount = binding.watermelonCount.text.toString().toInt()
             sellClick(2, fruitCount)
         }
 
     }
 
-    private fun sellClick(field:Int, fruitCutout: Int) {
-        if (fruitCutout > 0) {
-            viewModel.refreshWallet(fruitCutout)
-            viewModel.refreshFruitCount(field, -fruitCutout)
+    private fun sellClick(field: Int, fruitCount: Int) {
+        if (fruitCount > 0) {
+            viewModel.refreshWallet(fruitCount)
+            viewModel.refreshFruitCount(field, -fruitCount)
+            Log.d("click", "sellClick: $fruitCount ")
         }
     }
 
