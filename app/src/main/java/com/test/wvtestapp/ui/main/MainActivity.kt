@@ -2,19 +2,17 @@ package com.test.wvtestapp.ui.main
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
-import com.appsflyer.AppsFlyerConversionListener
-import com.appsflyer.AppsFlyerLib
-import com.appsflyer.attribution.AppsFlyerRequestListener
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import com.google.firebase.remoteconfig.ktx.remoteConfig
 import com.google.firebase.remoteconfig.ktx.remoteConfigSettings
 import com.test.wvtestapp.R
+import com.test.wvtestapp.base.App
+
 
 class MainActivity : AppCompatActivity() {
     private val navController by lazy { findNavController(R.id.main_fragmentContainerView) }
@@ -25,49 +23,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        flyerInit()
         remoteConfigInit()
-
-//
-//        val metricks: AppsFlyerConversionListener = object : AppsFlyerConversionListener {
-//            override fun onConversionDataSuccess(p0: MutableMap<String, Any>?) {
-//                TODO("Not yet implemented")
-//            }
-//
-//            override fun onConversionDataFail(p0: String?) {
-//                TODO("Not yet implemented")
-//            }
-//
-//            override fun onAppOpenAttribution(p0: MutableMap<String, String>?) {
-//                TODO("Not yet implemented")
-//            }
-//
-//            override fun onAttributionFailure(p0: String?) {
-//                TODO("Not yet implemented")
-//            }
-//        }
-//
-//        AppsFlyerLib.getInstance().setDebugLog(true)
-//        AppsFlyerLib.getInstance().init("flag", metricks, this)
-//        AppsFlyerLib.getInstance().registerConversionListener(this, metricks)
-//        AppsFlyerLib.getInstance().start(this)
-
-    }
-
-    private fun flyerInit() {
-        AppsFlyerLib.getInstance().start(this, "YOUR_DEV_KEY", object : AppsFlyerRequestListener {
-            override fun onSuccess() {
-                Log.d("FlyerLog", "Launch sent successfully")
-            }
-
-            override fun onError(errorCode: Int, errorDesc: String) {
-                Log.d(
-                    "FlyerLog", "Launch failed to be sent:\n" +
-                            "Error code: " + errorCode + "\n"
-                            + "Error description: " + errorDesc
-                )
-            }
-        })
     }
 
 
